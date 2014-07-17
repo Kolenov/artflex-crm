@@ -17,11 +17,6 @@ return array(
             // default connection name
             'orm_default' => array(
                 'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
-                'params' => array(
-                    'host'     => 'localhost',
-                    'port'     => '3306',
-                    'dbname'   => 'artflex_crm',
-                )
             )
         )
     ),
