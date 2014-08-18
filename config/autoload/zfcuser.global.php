@@ -22,6 +22,7 @@ $settings = array(
      * The entity class should implement ZfcUser\Entity\UserInterface
      */
     //'user_entity_class' => 'ZfcUser\Entity\User',
+    'user_entity_class' => 'Application\Entity\User',
 
     /**
      * Enable registration
@@ -40,7 +41,7 @@ $settings = array(
      *
      * Accepted values: boolean true or false
      */
-    'enable_username' => true,
+    //'enable_username' => false,
 
     /**     
      * Authentication Adapters
