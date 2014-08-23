@@ -21,7 +21,7 @@ use ZfcUser\Entity\UserInterface;
  *
  * @author Tom Oram <tom@scl.co.uk>
  */
-class User implements UserInterface, ProviderInterface
+class Users implements UserInterface, ProviderInterface
 {
     /**
      * @var int

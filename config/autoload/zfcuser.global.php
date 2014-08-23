@@ -6,6 +6,8 @@
  * drop this config file in it and change the values as you wish.
  */
 $settings = array(
+    'enable_default_entities' => false,
+    
     /**
      * Zend\Db\Adapter\Adapter DI Alias
      *
@@ -22,7 +24,7 @@ $settings = array(
      * The entity class should implement ZfcUser\Entity\UserInterface
      */
     //'user_entity_class' => 'ZfcUser\Entity\User',
-    'user_entity_class' => 'Application\Entity\User',
+    'user_entity_class' => 'Application\Entity\Users',
 
     /**
      * Enable registration
@@ -216,7 +218,7 @@ $settings = array(
     /**
      * User table name
      */
-    //'table_name' => 'user',
+    'table_name' => 'users',
     
     /**
      * End of ZfcUser configuration
