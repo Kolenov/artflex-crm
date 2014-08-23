@@ -1,5 +1,5 @@
 <?php
-return array(
+ return array(
     'doctrine' => array(
         'driver' => array(
             // overriding zfc-user-doctrine-orm's config
@@ -15,4 +15,4 @@ return array(
             )
         )
     ),
-);
+ );

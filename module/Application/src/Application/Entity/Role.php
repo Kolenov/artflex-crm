@@ -36,10 +36,14 @@ class Role implements HierarchicalRoleInterface
     protected $roleId;
 
     /**
-     * @var Role
+     * @var \Application\Entity\Role
+     *
      * @ORM\ManyToOne(targetEntity="Application\Entity\Role")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
+     * })
      */
-    protected $parent;
+    private $parent;
 
     /**
      * Get the id.

@@ -15,7 +15,7 @@ class Clients
     /**
      * @var integer
      *
-     * @ORM\Column(name="clients_id", type="integer", nullable=false)
+     * @ORM\Column(name="clients_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,58 +24,58 @@ class Clients
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @ORM\Column(name="name", type="string", length=255, precision=0, scale=0, nullable=false, unique=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="country", type="string", length=255, nullable=true)
+     * @ORM\Column(name="country", type="string", length=255, precision=0, scale=0, nullable=true, unique=false)
      */
     private $country;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="city", type="string", length=255, nullable=true)
+     * @ORM\Column(name="city", type="string", length=255, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $city = '';
+    private $city;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="street", type="string", length=255, nullable=true)
+     * @ORM\Column(name="street", type="string", length=255, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $street = '';
+    private $street;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="building", type="smallint", nullable=true)
+     * @ORM\Column(name="building", type="smallint", precision=0, scale=0, nullable=true, unique=false)
      */
     private $building;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=20, nullable=true)
+     * @ORM\Column(name="phone", type="string", length=20, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $phone = '';
+    private $phone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="fax", type="string", length=20, nullable=true)
+     * @ORM\Column(name="fax", type="string", length=20, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $fax = '';
+    private $fax;
 
     /**
      * @var \Application\Entity\Users
      *
      * @ORM\ManyToOne(targetEntity="Application\Entity\Users")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="manager_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="manager_id", referencedColumnName="id", nullable=true)
      * })
      */
     private $manager;
@@ -85,11 +85,10 @@ class Clients
      *
      * @ORM\ManyToOne(targetEntity="Application\Entity\Users")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="deputy_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="deputy_id", referencedColumnName="id", nullable=true)
      * })
      */
     private $deputy;
-
 
 
     /**

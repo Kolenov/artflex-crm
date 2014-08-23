@@ -15,7 +15,7 @@ class Calculation
     /**
      * @var integer
      *
-     * @ORM\Column(name="calculation_id", type="integer", nullable=false)
+     * @ORM\Column(name="calculation_id", type="integer", precision=0, scale=0, nullable=false, unique=true)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,196 +24,196 @@ class Calculation
     /**
      * @var integer
      *
-     * @ORM\Column(name="sticker_quantity", type="integer", nullable=false)
+     * @ORM\Column(name="sticker_quantity", type="integer", precision=0, scale=0, nullable=false, unique=false)
      */
     private $stickerQuantity;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="sticker_width", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="sticker_width", type="float", precision=0, scale=0, nullable=false, unique=false)
      */
     private $stickerWidth;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="sticker_height", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="sticker_height", type="float", precision=0, scale=0, nullable=false, unique=false)
      */
     private $stickerHeight;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="material_width", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="material_width", type="float", precision=0, scale=0, nullable=false, unique=false)
      */
     private $materialWidth;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="material_height", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="material_height", type="float", precision=0, scale=0, nullable=true, unique=false)
      */
     private $materialHeight;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="plate_quantity", type="boolean", nullable=true)
+     * @ORM\Column(name="plate_quantity", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $plateQuantity;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="plate_new", type="boolean", nullable=true)
+     * @ORM\Column(name="plate_new", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $plateNew;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="plate_cyan", type="boolean", nullable=true)
+     * @ORM\Column(name="plate_cyan", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $plateCyan;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="plate_magenta", type="boolean", nullable=true)
+     * @ORM\Column(name="plate_magenta", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $plateMagenta;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="plate_yellow", type="boolean", nullable=true)
+     * @ORM\Column(name="plate_yellow", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $plateYellow;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="plate_black", type="boolean", nullable=true)
+     * @ORM\Column(name="plate_black", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $plateBlack;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="plate_pantone", type="boolean", nullable=true)
+     * @ORM\Column(name="plate_pantone", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $platePantone;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="plate_varnish_uv", type="boolean", nullable=true)
+     * @ORM\Column(name="plate_varnish_uv", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $plateVarnishUv;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="plate_varnish_uv_selective", type="boolean", nullable=true)
+     * @ORM\Column(name="plate_varnish_uv_selective", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $plateVarnishUvSelective;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="plate_white", type="boolean", nullable=true)
+     * @ORM\Column(name="plate_white", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $plateWhite;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="trafaret_white", type="boolean", nullable=true)
+     * @ORM\Column(name="trafaret_white", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $trafaretWhite;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="trafaret_varnish", type="boolean", nullable=true)
+     * @ORM\Column(name="trafaret_varnish", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $trafaretVarnish;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="trafaret_pantone", type="boolean", nullable=true)
+     * @ORM\Column(name="trafaret_pantone", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $trafaretPantone;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="lamination", type="boolean", nullable=true)
+     * @ORM\Column(name="lamination", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $lamination;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="knife_new", type="boolean", nullable=true)
+     * @ORM\Column(name="knife_new", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
-    private $knifeNew = '0';
+    private $knifeNew;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="plate_foil", type="boolean", nullable=true)
+     * @ORM\Column(name="plate_foil", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $plateFoil;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="hot_foil", type="boolean", nullable=true)
+     * @ORM\Column(name="hot_foil", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $hotFoil;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="embossing", type="boolean", nullable=true)
+     * @ORM\Column(name="embossing", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $embossing;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="embossing_width", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="embossing_width", type="float", precision=10, scale=0, nullable=true, unique=false)
      */
     private $embossingWidth;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="embossing_height", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="embossing_height", type="float", precision=10, scale=0, nullable=true, unique=false)
      */
     private $embossingHeight;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="embossing_sticker_quantity", type="boolean", nullable=true)
+     * @ORM\Column(name="embossing_sticker_quantity", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $embossingStickerQuantity;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="discount", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="discount", type="float", precision=10, scale=0, nullable=true, unique=false)
      */
     private $discount;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="exchange_rates", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="exchange_rates", type="float", precision=10, scale=0, nullable=true, unique=false)
      */
     private $exchangeRates;
 
@@ -222,7 +222,7 @@ class Calculation
      *
      * @ORM\ManyToOne(targetEntity="Application\Entity\Knife")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="knife_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="knife_id", referencedColumnName="id", nullable=true)
      * })
      */
     private $knife;
@@ -232,11 +232,10 @@ class Calculation
      *
      * @ORM\ManyToOne(targetEntity="Application\Entity\Material")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="material", referencedColumnName="material_id")
+     *   @ORM\JoinColumn(name="material", referencedColumnName="material_id", nullable=true)
      * })
      */
     private $material;
-
 
 
     /**

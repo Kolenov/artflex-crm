@@ -17,7 +17,7 @@ class ClientsAliasLinker
      *
      * @ORM\ManyToOne(targetEntity="Application\Entity\Clients")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="alias_id", referencedColumnName="clients_id")
+     *   @ORM\JoinColumn(name="alias_id", referencedColumnName="clients_id", nullable=true)
      * })
      */
     private $alias;
@@ -29,11 +29,10 @@ class ClientsAliasLinker
      * @ORM\GeneratedValue(strategy="NONE")
      * @ORM\OneToOne(targetEntity="Application\Entity\Clients")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="client_id", referencedColumnName="clients_id")
+     *   @ORM\JoinColumn(name="client_id", referencedColumnName="clients_id", nullable=true)
      * })
      */
     private $client;
-
 
 
     /**

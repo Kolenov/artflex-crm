@@ -1,11 +1,5 @@
 <?php
-/**
- * BjyAuthorize Module (https://github.com/bjyoungblood/BjyAuthorize)
- *
- * @link https://github.com/bjyoungblood/BjyAuthorize for the canonical source repository
- * @license http://framework.zend.com/license/new-bsd New BSD License
- */
- 
+
 namespace Application\Entity;
 
 use BjyAuthorize\Provider\Role\ProviderInterface;
@@ -14,47 +8,50 @@ use Doctrine\ORM\Mapping as ORM;
 use ZfcUser\Entity\UserInterface;
 
 /**
- * An example of how to implement a role aware user entity.
+ * Users
  *
- * @ORM\Entity
  * @ORM\Table(name="users")
- *
- * @author Tom Oram <tom@scl.co.uk>
+ * @ORM\Entity
  */
 class Users implements UserInterface, ProviderInterface
 {
     /**
-     * @var int
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    protected $id;
+    private $id;
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     *
+     * @ORM\Column(name="username", type="string", length=255, precision=0, scale=0, nullable=true, unique=true)
      */
-    protected $username;
+    private $username;
 
     /**
      * @var string
-     * @ORM\Column(type="string", unique=true,  length=255)
+     *
+     * @ORM\Column(name="email", type="string", length=255, precision=0, scale=0, nullable=false, unique=true)
      */
-    protected $email;
+    private $email;
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=50, nullable=true)
+     *
+     * @ORM\Column(name="displayName", type="string", length=50, precision=0, scale=0, nullable=true, unique=false)
      */
-    protected $displayName;
+    private $displayName;
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=128)
+     *
+     * @ORM\Column(name="password", type="string", length=128, precision=0, scale=0, nullable=false, unique=false)
      */
-    protected $password;
-
+    private $password;
+    
     /**
      * @var int
      */
@@ -62,26 +59,31 @@ class Users implements UserInterface, ProviderInterface
 
     /**
      * @var \Doctrine\Common\Collections\Collection
+     *
      * @ORM\ManyToMany(targetEntity="Application\Entity\Role")
      * @ORM\JoinTable(name="user_role_linker",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")}
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=true)
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="role_id", referencedColumnName="id", nullable=true)
+     *   }
      * )
      */
-    protected $roles;
+    private $roles;
 
     /**
-     * Initialies the roles variable.
+     * Constructor
      */
     public function __construct()
     {
-        $this->roles = new ArrayCollection();
+        $this->roles = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Get id.
+     * Get id
      *
-     * @return int
+     * @return integer 
      */
     public function getId()
     {
@@ -99,11 +101,24 @@ class Users implements UserInterface, ProviderInterface
     {
         $this->id = (int) $id;
     }
+    
+    /**
+     * Set username
+     *
+     * @param string $username
+     * @return Users
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
 
     /**
-     * Get username.
+     * Get username
      *
-     * @return string
+     * @return string 
      */
     public function getUsername()
     {
@@ -111,21 +126,22 @@ class Users implements UserInterface, ProviderInterface
     }
 
     /**
-     * Set username.
+     * Set email
      *
-     * @param string $username
-     *
-     * @return void
+     * @param string $email
+     * @return Users
      */
-    public function setUsername($username)
+    public function setEmail($email)
     {
-        $this->username = $username;
+        $this->email = $email;
+
+        return $this;
     }
 
     /**
-     * Get email.
+     * Get email
      *
-     * @return string
+     * @return string 
      */
     public function getEmail()
     {
@@ -133,21 +149,22 @@ class Users implements UserInterface, ProviderInterface
     }
 
     /**
-     * Set email.
+     * Set displayName
      *
-     * @param string $email
-     *
-     * @return void
+     * @param string $displayName
+     * @return Users
      */
-    public function setEmail($email)
+    public function setDisplayName($displayName)
     {
-        $this->email = $email;
+        $this->displayName = $displayName;
+
+        return $this;
     }
 
     /**
-     * Get displayName.
+     * Get displayName
      *
-     * @return string
+     * @return string 
      */
     public function getDisplayName()
     {
@@ -155,39 +172,28 @@ class Users implements UserInterface, ProviderInterface
     }
 
     /**
-     * Set displayName.
+     * Set password
      *
-     * @param string $displayName
-     *
-     * @return void
+     * @param string $password
+     * @return Users
      */
-    public function setDisplayName($displayName)
+    public function setPassword($password)
     {
-        $this->displayName = $displayName;
+        $this->password = $password;
+
+        return $this;
     }
 
     /**
-     * Get password.
+     * Get password
      *
-     * @return string
+     * @return string 
      */
     public function getPassword()
     {
         return $this->password;
     }
-
-    /**
-     * Set password.
-     *
-     * @param string $password
-     *
-     * @return void
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
-
+    
     /**
      * Get state.
      *
@@ -197,7 +203,7 @@ class Users implements UserInterface, ProviderInterface
     {
         return $this->state;
     }
-
+    
     /**
      * Set state.
      *
@@ -209,26 +215,37 @@ class Users implements UserInterface, ProviderInterface
     {
         $this->state = $state;
     }
-
+    
     /**
-     * Get role.
+     * Add roles
      *
-     * @return array
+     * @param \Application\Entity\Role $roles
+     * @return Users
      */
-    public function getRoles()
+    public function addRole(\Application\Entity\Role $roles)
     {
-        return $this->roles->getValues();
+        $this->roles[] = $roles;
+
+        return $this;
     }
 
     /**
-     * Add a role to the user.
+     * Remove roles
      *
-     * @param Role $role
-     *
-     * @return void
+     * @param \Application\Entity\Role $roles
      */
-    public function addRole($role)
+    public function removeRole(\Application\Entity\Role $roles)
     {
-        $this->roles[] = $role;
+        $this->roles->removeElement($roles);
+    }
+
+    /**
+     * Get roles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRoles()
+    {
+        return $this->roles;
     }
 }

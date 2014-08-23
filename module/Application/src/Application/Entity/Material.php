@@ -13,42 +13,41 @@ use Doctrine\ORM\Mapping as ORM;
 class Material
 {
     /**
-     * @var boolean
+     * @var int
      *
-     * @ORM\Column(name="material_id", type="boolean", nullable=false)
+     * @ORM\Column(name="material_id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $materialId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @ORM\Column(name="name", type="string", length=255, precision=0, scale=0, nullable=false, unique=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255, nullable=false)
+     * @ORM\Column(name="type", type="string", length=255, precision=0, scale=0, nullable=false, unique=false)
      */
     private $type;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="vendor", type="string", length=255, nullable=false)
+     * @ORM\Column(name="vendor", type="string", length=255, precision=0, scale=0, nullable=false, unique=false)
      */
     private $vendor;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="state", type="smallint", nullable=true)
+     * @ORM\Column(name="state", type="smallint", precision=0, scale=0, nullable=true, unique=false)
      */
     private $state;
-
 
 
     /**

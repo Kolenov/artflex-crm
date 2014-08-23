@@ -15,7 +15,7 @@ class Knife
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,24 +24,23 @@ class Knife
     /**
      * @var string
      *
-     * @ORM\Column(name="path", type="string", length=255, nullable=true)
+     * @ORM\Column(name="path", type="string", length=255, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $path = '//server/print/-=knife=-/';
+    private $path;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="preview_path", type="string", length=255, nullable=true)
+     * @ORM\Column(name="preview_path", type="string", length=255, precision=0, scale=0, nullable=true, unique=false)
      */
     private $previewPath;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="cost", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="cost", type="float", precision=10, scale=0, nullable=true, unique=false)
      */
     private $cost;
-
 
 
     /**
