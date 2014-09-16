@@ -63,7 +63,7 @@ return array(
         ),
     ),
     'translator' => array(
-        'locale' => 'en_US',
+        'locale' => 'ru_RU',
         'translation_file_patterns' => array(
             array(
                 'type'     => 'gettext',
@@ -100,6 +100,7 @@ return array(
             ),
         ),
     ),
+    
     'doctrine' => array(
         'driver' => array(
             __NAMESPACE__ . '_driver' => array(
@@ -116,5 +117,5 @@ return array(
             )
         )
     ),
-
+    
 );

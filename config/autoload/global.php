@@ -18,12 +18,19 @@ return array(
                 'params' => array(
                     'host' => 'localhost',
                     'port' => '3306',
-                    'user' => 'root',
+                    'user' => 'artflex',
                     'password' => 'artflex',
                     'dbname' => 'artflex_crm'
                 )
             )
         )
-    )
+    ),
+    
+'service_manager' => array(  
+   'factories' => array(
+       'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+   ),
+)
+    
 );
 

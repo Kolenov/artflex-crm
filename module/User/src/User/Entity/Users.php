@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Entity;
+namespace User\Entity;
 
 use BjyAuthorize\Provider\Role\ProviderInterface;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -54,19 +54,21 @@ class Users implements UserInterface, ProviderInterface
     
     /**
      * @var int
+     * 
+     * @ORM\Column(name="state", type="smallint", length=5, nullable=true)
      */
     protected $state;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Application\Entity\Role")
+     * @ORM\ManyToMany(targetEntity="User\Entity\Role")
      * @ORM\JoinTable(name="user_role_linker",
      *   joinColumns={
      *     @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=true)
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="role_id", referencedColumnName="id", nullable=true)
+     *     @ORM\JoinColumn(name="role_id", referencedColumnName="id", nullable=false)
      *   }
      * )
      */
@@ -219,10 +221,10 @@ class Users implements UserInterface, ProviderInterface
     /**
      * Add roles
      *
-     * @param \Application\Entity\Role $roles
+     * @param \User\Entity\Role $roles
      * @return Users
      */
-    public function addRole(\Application\Entity\Role $roles)
+    public function addRole(\User\Entity\Role $roles)
     {
         $this->roles[] = $roles;
 
@@ -232,9 +234,9 @@ class Users implements UserInterface, ProviderInterface
     /**
      * Remove roles
      *
-     * @param \Application\Entity\Role $roles
+     * @param \User\Entity\Role $roles
      */
-    public function removeRole(\Application\Entity\Role $roles)
+    public function removeRole(\User\Entity\Role $roles)
     {
         $this->roles->removeElement($roles);
     }
@@ -248,4 +250,5 @@ class Users implements UserInterface, ProviderInterface
     {
         return $this->roles;
     }
+    
 }

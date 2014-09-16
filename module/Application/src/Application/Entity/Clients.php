@@ -71,9 +71,9 @@ class Clients
     private $fax;
 
     /**
-     * @var \Application\Entity\Users
+     * @var \User\Entity\Users
      *
-     * @ORM\ManyToOne(targetEntity="Application\Entity\Users")
+     * @ORM\ManyToOne(targetEntity="User\Entity\Users")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="manager_id", referencedColumnName="id", nullable=true)
      * })
@@ -81,9 +81,9 @@ class Clients
     private $manager;
 
     /**
-     * @var \Application\Entity\Users
+     * @var \User\Entity\Users
      *
-     * @ORM\ManyToOne(targetEntity="Application\Entity\Users")
+     * @ORM\ManyToOne(targetEntity="User\Entity\Users")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="deputy_id", referencedColumnName="id", nullable=true)
      * })
@@ -265,10 +265,10 @@ class Clients
     /**
      * Set manager
      *
-     * @param \Application\Entity\Users $manager
+     * @param \User\Entity\Users $manager
      * @return Clients
      */
-    public function setManager(\Application\Entity\Users $manager = null)
+    public function setManager(\User\Entity\Users $manager = null)
     {
         $this->manager = $manager;
 
@@ -278,7 +278,7 @@ class Clients
     /**
      * Get manager
      *
-     * @return \Application\Entity\Users 
+     * @return \User\Entity\Users 
      */
     public function getManager()
     {
@@ -288,10 +288,10 @@ class Clients
     /**
      * Set deputy
      *
-     * @param \Application\Entity\Users $deputy
+     * @param \User\Entity\Users $deputy
      * @return Clients
      */
-    public function setDeputy(\Application\Entity\Users $deputy = null)
+    public function setDeputy(\User\Entity\Users $deputy = null)
     {
         $this->deputy = $deputy;
 
@@ -301,7 +301,7 @@ class Clients
     /**
      * Get deputy
      *
-     * @return \Application\Entity\Users 
+     * @return \User\Entity\Users 
      */
     public function getDeputy()
     {

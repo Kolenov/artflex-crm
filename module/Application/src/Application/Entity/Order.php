@@ -49,9 +49,9 @@ class Order
     private $client;
 
     /**
-     * @var \Application\Entity\Users
+     * @var \User\Entity\Users
      *
-     * @ORM\ManyToOne(targetEntity="Application\Entity\Users")
+     * @ORM\ManyToOne(targetEntity="User\Entity\Users")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="manager", referencedColumnName="id", nullable=true)
      * })
@@ -141,10 +141,10 @@ class Order
     /**
      * Set manager
      *
-     * @param \Application\Entity\Users $manager
+     * @param \User\Entity\Users $manager
      * @return Order
      */
-    public function setManager(\Application\Entity\Users $manager = null)
+    public function setManager(\User\Entity\Users $manager = null)
     {
         $this->manager = $manager;
 
@@ -154,7 +154,7 @@ class Order
     /**
      * Get manager
      *
-     * @return \Application\Entity\Users 
+     * @return \User\Entity\Users 
      */
     public function getManager()
     {
