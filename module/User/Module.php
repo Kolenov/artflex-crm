@@ -35,7 +35,7 @@ class Module implements AutoloaderProviderInterface
     {
         return include __DIR__ . '/config/module.config.php';
     }
-
+    
     public function onBootstrap(MvcEvent $e)
     {
         // You may not need to do this if you're doing it elsewhere in your
@@ -50,7 +50,7 @@ class Module implements AutoloaderProviderInterface
         // Добавляем поле выбора роли в форму
         $sharedManager->attach('ZfcUser\Form\Register', 'init', function ($e) use($serviceManager)
         {
-            // @var $form \ZfcUser\Form\Register
+                // @var $form \ZfcUser\Form\Register
             $form = $e->getTarget();
             $form->add(array(
                 'name' => 'role',
@@ -62,9 +62,11 @@ class Module implements AutoloaderProviderInterface
                     'property' => 'roleId'
                 )
             ));
-        });
-        
-        
+            
+            //$filter = $e->getTarget();
+            //$filter->add();
+        }); 
+
         $zfcServiceEvents = $serviceManager->get('zfcuser_user_service')->getEventManager();
         // Store the field
         $zfcServiceEvents->attach('register', function ($e) use($serviceManager)
@@ -77,5 +79,17 @@ class Module implements AutoloaderProviderInterface
             $role = $objectManager->find('User\Entity\Role', $roleId);
             $user->addRole($role);
         });
+        
+/*      // add default role
+        $zfcServiceEvents = $mvcEvent->getApplication()->getServiceManager()->get('zfcuser_user_service')->getEventManager();
+        $zfcServiceEvents->attach('register', function($e) use($mvcEvent) 
+        {
+            $user = $e->getParam('user');
+            $em = $mvcEvent->getApplication()->getServiceManager()->get('doctrine.entitymanager.orm_default');
+            $config = $mvcEvent->getApplication()->getServiceManager()->get('config');
+            $defaultUserRole = $em->getRepository('User\Entity\Role')->find($config['user_role_id']);
+            $user->addRole($defaultUserRole);
+        }); 
+*/     
     }
 }

@@ -7,7 +7,7 @@
     "doctrine/doctrine-orm-module" : "0.8.*",
     "zf-commons/zfc-user-doctrine-orm" : "1.0.*",
     "bjyoungblood/bjy-authorize" : "1.4.*",
-    "kunstmaan/user-management-bundle" : "=v2.3.0"
+    "zf-commons/zfc-admin" : "=v0.2.0"
   },
   "repositories" : [ {
     "type" : "composer",

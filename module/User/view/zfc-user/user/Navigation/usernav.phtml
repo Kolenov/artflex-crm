@@ -1,0 +1,30 @@
+<?php /* @var $page Zend\Navigation\Page\Mvc */ ?>
+<?php $page=$this->container->findOneById(0) ?>
+<ul class="nav navbar-nav navbar-right">
+<!-- Test if the User is connected -->
+<?php if(!$this->zfcUserIdentity()): ?>
+    <!-- display the Sign In link -->
+    <li>
+        <a href="<?php echo $page->getHref() ?>">Sign In <span class="glyphicon glyphicon-log-in"></span></a>
+    </li>
+<?php else: ?>
+    <li class="dropdown">
+        <a href="<?php echo $page->getHref() ?>" class="dropdown-toggle" data-toggle="dropdown">
+            <!-- display the 'display name' of the user -->
+            <?php echo $this->zfcUserIdentity()->getDisplayname(); ?>
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <?php foreach ($page->getPages() as $child) : ?>
+            <?php // when using partials we need to manually check for ACL conditions ?>
+            <?php if(!$child->isVisible() || !$this->navigation()->accept($child)) { continue; } ?>
+            <li>
+                <a href="<?php echo $child->getHref() ?>">
+                    <?php echo $this->translate($child->getLabel())?>
+                </a>
+            </li>
+            <?php endforeach ?>
+        </ul>
+    </li>           
+<?php endif?>
+</ul>

@@ -20,17 +20,18 @@ return array(
                     'port' => '3306',
                     'user' => 'artflex',
                     'password' => 'artflex',
-                    'dbname' => 'artflex_crm'
+                    'dbname' => 'artflex_crm',
+                    'charset'  => 'UTF8',
                 )
             )
         )
     ),
     
-'service_manager' => array(  
-   'factories' => array(
-       'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
-   ),
-)
-    
+    'service_manager' => array(  
+       'factories' => array(
+           'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+       ),
+
+    ),  
 );
 

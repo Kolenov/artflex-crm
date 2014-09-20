@@ -1,3 +1,4 @@
+<div class="account col-md-4 col-md-offset-4">
 <div class="page-header">
     <h1><?php echo $this->translate('Sign in'); ?></h1>
 </div>
@@ -12,7 +13,7 @@ $form->setAttribute('method', 'post');
 <?php echo $this->form()->openTag($form) ?>
 <?php foreach ($form as $element) : ?>
  
-    <div style="width: 330px;" class="form-group <?php if ($this->formElementErrors($element)) echo "has-error" ?>">
+    <div class="form-group <?php if ($this->formElementErrors($element)) echo "has-error" ?>">
         <?php
             if ('submit' != $element->getAttribute('type')) { ?>
                 <!--  <label class="control-label"><?php echo $element->getLabel() ?></label>-->
@@ -20,7 +21,7 @@ $form->setAttribute('method', 'post');
                 $element->setAttribute('class', 'form-control')
                         ->setAttribute('placeholder', $element->getLabel());
             } else {
-                $element->setAttribute('class', 'btn btn-primary');
+                $element->setAttribute('class', 'btn btn-success');
             }
             echo $this->formElement($element);
             if ($this->formElementErrors($element)) : ?>
@@ -42,3 +43,4 @@ echo $this->form()->closeTag() ?>
 <?php if ($this->enableRegistration) : ?>
 <?php echo $this->translate('Not registered?'); ?> <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->redirect : '') ?>"><?php echo $this->translate('Sign up!'); ?></a>
 <?php endif; ?>
+</div>

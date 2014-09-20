@@ -17,7 +17,7 @@ return array(
             ),
         ),
 
-        'guards' => array(
+       'guards' => array(
             /* If this guard is specified here (i.e. it is enabled), it will block
              * access to all controllers and actions unless they are specified here.
              * You may omit the 'action' index to allow access to the entire controller
@@ -38,8 +38,26 @@ return array(
                     'action' => array('logout'),
                     'roles' => array('user'),
                 ),
-                array('controller' => 'Application\Controller\Index', 'roles' => array()),
-                array('controller' => 'ZfcAdmin\Controller\AdminController', 'roles' => array()),
+                array(
+                    'controller' => 'zfcuser',
+                    'action' => array('changepassword'),
+                    'roles' => array('user'),
+                ),
+                array(
+                    'controller' => 'zfcuser',
+                    'action' => array('changeemail'),
+                    'roles' => array('user'),
+                ),
+                array(
+                    'controller' => 'Application\Controller\Index',
+                    'roles' => array(),
+                    
+                ),
+                array(
+                    'controller' => 'ZfcAdmin\Controller\AdminController',
+                    'roles' => array(),
+                    
+                ),
 
             ),
         ),
