@@ -12,7 +12,7 @@ return array(
             ),
             array(
                 'label' => 'Design',
-                'route' => 'home'
+                'route' => 'application/dashboard'
             ),
             array(
                 'label' => 'Manager',
@@ -22,31 +22,6 @@ return array(
                 'label' => 'Home',
                 'route' => 'home'
             )
-        ),
-        
-//         'user' => array(
-//             array(
-//                 'label' => 'Account',
-//                 'route' => 'zfcuser',
-//                 'pages' => array(
-//                     'home' => array(
-//                         'label' => 'Dashboard',
-//                         'route' => 'zfcuser',
-//                     ),
-//                     'changeemail' => array(
-//                        'label' => 'Change e-mail',
-//                         'route' => 'zfcuser/changeemail'
-//                     ),
-//                     'changepassword' => array(
-//                         'label' => 'Change Password',
-//                         'route' => 'zfcuser/changepassword'
-//                     ),
-//                     'logout' => array(
-//                         'label' => 'Sign Out',
-//                         'route' => 'zfcuser/logout'
-//                     ),
-//                 )
-//             )
-//         ) 
+        )
     )
 );

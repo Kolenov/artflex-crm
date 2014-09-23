@@ -50,8 +50,13 @@ return array(
                 ),
                 array(
                     'controller' => 'Application\Controller\Index',
+                    //'action' => array(),
                     'roles' => array(),
-                    
+                ),
+                array(
+                    'controller' => 'Application\Controller\Dashboard',
+                    //'action' => array(),
+                    'roles' => array(),
                 ),
                 array(
                     'controller' => 'ZfcAdmin\Controller\AdminController',

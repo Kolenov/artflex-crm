@@ -37,6 +37,20 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
+                    
+                    'dashboard' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/dashboard',
+                            'constraints' => array(
+                                'controller' => 'Application\Controller\Dashboard',
+                                'action'     => 'index',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
+                    ),
+ 
                     'default' => array(
                         'type'    => 'Segment',
                         'options' => array(
@@ -74,7 +88,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Dashboard' => 'Application\Controller\DashboardController'
         ),
     ),
     'view_manager' => array(

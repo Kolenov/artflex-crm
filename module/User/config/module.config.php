@@ -1,5 +1,6 @@
 <?php
 namespace User;
+
 return array(
     'zfcuser' => array(
         
@@ -9,17 +10,32 @@ return array(
         // telling ZfcUserDoctrineORM to skip the entities it defines
         'enable_default_entities' => false,
         
+        //Enable Username
+        'enable_username' => true,
+        
+        //Enable Display Name
+        'enable_display_name' => true,
+        
+        //Modes for authentication identity match
+        'auth_identity_fields' => array(
+            'username',
+            'email'
+        ),
+        
         // Logout Redirect Route
-        'logout_redirect_route' => 'home',
+        'logout_redirect_route' => 'application/dashboard',
         
         // Enable user state usage
-        // 'enable_user_state' => true,
+        'enable_user_state' => true,
         
         // Default user state upon registration
-        // 'default_user_state' => 1,
+        'default_user_state' => 1,
         
         // States which are allowing user to login
-        // 'allowed_login_states' => array( null, 1 ),
+        'allowed_login_states' => array(
+            null,
+            1
+        ),
         
         // User table name
         'table_name' => 'users',
@@ -55,12 +71,12 @@ return array(
                 'label' => 'Account',
                 'route' => 'zfcuser',
                 'pages' => array(
-                    'home' => array(
+                    'dashboard' => array(
                         'label' => 'Dashboard',
-                        'route' => 'zfcuser',
+                        'route' => 'application/dashboard'
                     ),
                     'changeemail' => array(
-                       'label' => 'Change e-mail',
+                        'label' => 'Change e-mail',
                         'route' => 'zfcuser/changeemail'
                     ),
                     'changepassword' => array(
@@ -70,11 +86,10 @@ return array(
                     'logout' => array(
                         'label' => 'Sign Out',
                         'route' => 'zfcuser/logout'
-                    ),
+                    )
                 )
             )
-        ) 
-    ),
-        
-
-);
+        )
+    )
+)
+;
