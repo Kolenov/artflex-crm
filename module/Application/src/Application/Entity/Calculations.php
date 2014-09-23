@@ -5,12 +5,12 @@ namespace Application\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Calculation
+ * Calculations
  *
- * @ORM\Table(name="calculation", indexes={@ORM\Index(name="FK_material_idx", columns={"material"}), @ORM\Index(name="FK_knife_calculation_idx", columns={"knife_id"})})
+ * @ORM\Table(name="calculations", indexes={@ORM\Index(name="FK_material_idx", columns={"material"}), @ORM\Index(name="FK_knife_calculation_idx", columns={"knife_id"})})
  * @ORM\Entity
  */
-class Calculation
+class Calculations
 {
     /**
      * @var integer
@@ -218,9 +218,9 @@ class Calculation
     private $exchangeRates;
 
     /**
-     * @var \Application\Entity\Knife
+     * @var \Application\Entity\Knives
      *
-     * @ORM\ManyToOne(targetEntity="Application\Entity\Knife")
+     * @ORM\ManyToOne(targetEntity="Application\Entity\Knives")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="knife_id", referencedColumnName="id", nullable=true)
      * })
@@ -228,9 +228,9 @@ class Calculation
     private $knife;
 
     /**
-     * @var \Application\Entity\Material
+     * @var \Application\Entity\Materials
      *
-     * @ORM\ManyToOne(targetEntity="Application\Entity\Material")
+     * @ORM\ManyToOne(targetEntity="Application\Entity\Materials")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="material", referencedColumnName="material_id", nullable=true)
      * })
@@ -252,7 +252,7 @@ class Calculation
      * Set stickerQuantity
      *
      * @param integer $stickerQuantity
-     * @return Calculation
+     * @return Calculations
      */
     public function setStickerQuantity($stickerQuantity)
     {
@@ -275,7 +275,7 @@ class Calculation
      * Set stickerWidth
      *
      * @param float $stickerWidth
-     * @return Calculation
+     * @return Calculations
      */
     public function setStickerWidth($stickerWidth)
     {
@@ -298,7 +298,7 @@ class Calculation
      * Set stickerHeight
      *
      * @param float $stickerHeight
-     * @return Calculation
+     * @return Calculations
      */
     public function setStickerHeight($stickerHeight)
     {
@@ -321,7 +321,7 @@ class Calculation
      * Set materialWidth
      *
      * @param float $materialWidth
-     * @return Calculation
+     * @return Calculations
      */
     public function setMaterialWidth($materialWidth)
     {
@@ -344,7 +344,7 @@ class Calculation
      * Set materialHeight
      *
      * @param float $materialHeight
-     * @return Calculation
+     * @return Calculations
      */
     public function setMaterialHeight($materialHeight)
     {
@@ -367,7 +367,7 @@ class Calculation
      * Set plateQuantity
      *
      * @param boolean $plateQuantity
-     * @return Calculation
+     * @return Calculations
      */
     public function setPlateQuantity($plateQuantity)
     {
@@ -390,7 +390,7 @@ class Calculation
      * Set plateNew
      *
      * @param boolean $plateNew
-     * @return Calculation
+     * @return Calculations
      */
     public function setPlateNew($plateNew)
     {
@@ -413,7 +413,7 @@ class Calculation
      * Set plateCyan
      *
      * @param boolean $plateCyan
-     * @return Calculation
+     * @return Calculations
      */
     public function setPlateCyan($plateCyan)
     {
@@ -436,7 +436,7 @@ class Calculation
      * Set plateMagenta
      *
      * @param boolean $plateMagenta
-     * @return Calculation
+     * @return Calculations
      */
     public function setPlateMagenta($plateMagenta)
     {
@@ -459,7 +459,7 @@ class Calculation
      * Set plateYellow
      *
      * @param boolean $plateYellow
-     * @return Calculation
+     * @return Calculations
      */
     public function setPlateYellow($plateYellow)
     {
@@ -482,7 +482,7 @@ class Calculation
      * Set plateBlack
      *
      * @param boolean $plateBlack
-     * @return Calculation
+     * @return Calculations
      */
     public function setPlateBlack($plateBlack)
     {
@@ -505,7 +505,7 @@ class Calculation
      * Set platePantone
      *
      * @param boolean $platePantone
-     * @return Calculation
+     * @return Calculations
      */
     public function setPlatePantone($platePantone)
     {
@@ -528,7 +528,7 @@ class Calculation
      * Set plateVarnishUv
      *
      * @param boolean $plateVarnishUv
-     * @return Calculation
+     * @return Calculations
      */
     public function setPlateVarnishUv($plateVarnishUv)
     {
@@ -551,7 +551,7 @@ class Calculation
      * Set plateVarnishUvSelective
      *
      * @param boolean $plateVarnishUvSelective
-     * @return Calculation
+     * @return Calculations
      */
     public function setPlateVarnishUvSelective($plateVarnishUvSelective)
     {
@@ -574,7 +574,7 @@ class Calculation
      * Set plateWhite
      *
      * @param boolean $plateWhite
-     * @return Calculation
+     * @return Calculations
      */
     public function setPlateWhite($plateWhite)
     {
@@ -597,7 +597,7 @@ class Calculation
      * Set trafaretWhite
      *
      * @param boolean $trafaretWhite
-     * @return Calculation
+     * @return Calculations
      */
     public function setTrafaretWhite($trafaretWhite)
     {
@@ -620,7 +620,7 @@ class Calculation
      * Set trafaretVarnish
      *
      * @param boolean $trafaretVarnish
-     * @return Calculation
+     * @return Calculations
      */
     public function setTrafaretVarnish($trafaretVarnish)
     {
@@ -643,7 +643,7 @@ class Calculation
      * Set trafaretPantone
      *
      * @param boolean $trafaretPantone
-     * @return Calculation
+     * @return Calculations
      */
     public function setTrafaretPantone($trafaretPantone)
     {
@@ -666,7 +666,7 @@ class Calculation
      * Set lamination
      *
      * @param boolean $lamination
-     * @return Calculation
+     * @return Calculations
      */
     public function setLamination($lamination)
     {
@@ -689,7 +689,7 @@ class Calculation
      * Set knifeNew
      *
      * @param boolean $knifeNew
-     * @return Calculation
+     * @return Calculations
      */
     public function setKnifeNew($knifeNew)
     {
@@ -712,7 +712,7 @@ class Calculation
      * Set plateFoil
      *
      * @param boolean $plateFoil
-     * @return Calculation
+     * @return Calculations
      */
     public function setPlateFoil($plateFoil)
     {
@@ -735,7 +735,7 @@ class Calculation
      * Set hotFoil
      *
      * @param boolean $hotFoil
-     * @return Calculation
+     * @return Calculations
      */
     public function setHotFoil($hotFoil)
     {
@@ -758,7 +758,7 @@ class Calculation
      * Set embossing
      *
      * @param boolean $embossing
-     * @return Calculation
+     * @return Calculations
      */
     public function setEmbossing($embossing)
     {
@@ -781,7 +781,7 @@ class Calculation
      * Set embossingWidth
      *
      * @param float $embossingWidth
-     * @return Calculation
+     * @return Calculations
      */
     public function setEmbossingWidth($embossingWidth)
     {
@@ -804,7 +804,7 @@ class Calculation
      * Set embossingHeight
      *
      * @param float $embossingHeight
-     * @return Calculation
+     * @return Calculations
      */
     public function setEmbossingHeight($embossingHeight)
     {
@@ -827,7 +827,7 @@ class Calculation
      * Set embossingStickerQuantity
      *
      * @param boolean $embossingStickerQuantity
-     * @return Calculation
+     * @return Calculations
      */
     public function setEmbossingStickerQuantity($embossingStickerQuantity)
     {
@@ -850,7 +850,7 @@ class Calculation
      * Set discount
      *
      * @param float $discount
-     * @return Calculation
+     * @return Calculations
      */
     public function setDiscount($discount)
     {
@@ -873,7 +873,7 @@ class Calculation
      * Set exchangeRates
      *
      * @param float $exchangeRates
-     * @return Calculation
+     * @return Calculations
      */
     public function setExchangeRates($exchangeRates)
     {
@@ -895,10 +895,10 @@ class Calculation
     /**
      * Set knife
      *
-     * @param \Application\Entity\Knife $knife
-     * @return Calculation
+     * @param \Application\Entity\Knives $knife
+     * @return Calculations
      */
-    public function setKnife(\Application\Entity\Knife $knife = null)
+    public function setKnife(\Application\Entity\Knives $knife = null)
     {
         $this->knife = $knife;
 
@@ -908,7 +908,7 @@ class Calculation
     /**
      * Get knife
      *
-     * @return \Application\Entity\Knife 
+     * @return \Application\Entity\Knives 
      */
     public function getKnife()
     {
@@ -918,10 +918,10 @@ class Calculation
     /**
      * Set material
      *
-     * @param \Application\Entity\Material $material
-     * @return Calculation
+     * @param \Application\Entity\Materials $material
+     * @return Calculations
      */
-    public function setMaterial(\Application\Entity\Material $material = null)
+    public function setMaterial(\Application\Entity\Materials $material = null)
     {
         $this->material = $material;
 
@@ -931,7 +931,7 @@ class Calculation
     /**
      * Get material
      *
-     * @return \Application\Entity\Material 
+     * @return \Application\Entity\Materials 
      */
     public function getMaterial()
     {

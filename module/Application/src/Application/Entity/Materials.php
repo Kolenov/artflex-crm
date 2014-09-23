@@ -5,19 +5,19 @@ namespace Application\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Material
+ * Materials
  *
- * @ORM\Table(name="material")
+ * @ORM\Table(name="materials")
  * @ORM\Entity
  */
-class Material
+class Materials
 {
     /**
-     * @var int
+     * @var integer
      *
-     * @ORM\Column(name="material_id", type="integer")
+     * @ORM\Column(name="material_id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $materialId;
 
@@ -64,7 +64,7 @@ class Material
      * Set name
      *
      * @param string $name
-     * @return Material
+     * @return Materials
      */
     public function setName($name)
     {
@@ -87,7 +87,7 @@ class Material
      * Set type
      *
      * @param string $type
-     * @return Material
+     * @return Materials
      */
     public function setType($type)
     {
@@ -110,7 +110,7 @@ class Material
      * Set vendor
      *
      * @param string $vendor
-     * @return Material
+     * @return Materials
      */
     public function setVendor($vendor)
     {
@@ -133,7 +133,7 @@ class Material
      * Set state
      *
      * @param integer $state
-     * @return Material
+     * @return Materials
      */
     public function setState($state)
     {
