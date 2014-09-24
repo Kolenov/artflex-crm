@@ -15,7 +15,7 @@ class Knives
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,14 +24,14 @@ class Knives
     /**
      * @var string
      *
-     * @ORM\Column(name="path", type="string", length=255, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="path", type="string", length=255, nullable=false, unique=false)
      */
     private $path;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="preview_path", type="string", length=255, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="preview_path", type="string", length=255, nullable=true, unique=false)
      */
     private $previewPath;
 

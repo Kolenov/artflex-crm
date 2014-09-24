@@ -24,28 +24,28 @@ class Materials
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="name", type="string", length=255, nullable=false, unique=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="type", type="string", length=255, nullable=false, unique=false)
      */
     private $type;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="vendor", type="string", length=255, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="vendor", type="string", length=255, nullable=false, unique=false)
      */
     private $vendor;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="state", type="smallint", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="state", type="smallint", nullable=true, unique=false)
      */
     private $state;
 

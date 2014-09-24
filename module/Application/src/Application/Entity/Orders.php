@@ -15,7 +15,7 @@ class Orders
     /**
      * @var integer
      *
-     * @ORM\Column(name="order_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="order_id", type="integer", nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,7 +24,7 @@ class Orders
     /**
      * @var boolean
      *
-     * @ORM\Column(name="state", type="smallint", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="state", type="smallint", nullable=false, unique=false)
      */
     private $state;
 
@@ -33,7 +33,7 @@ class Orders
      *
      * @ORM\ManyToOne(targetEntity="Application\Entity\Calculations")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="calculation", referencedColumnName="calculation_id", nullable=true)
+     *   @ORM\JoinColumn(name="calculation", referencedColumnName="calculation_id", nullable=false)
      * })
      */
     private $calculation;

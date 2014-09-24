@@ -18,7 +18,7 @@ class Users implements UserInterface, ProviderInterface
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -27,28 +27,28 @@ class Users implements UserInterface, ProviderInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=255, precision=0, scale=0, nullable=true, unique=true)
+     * @ORM\Column(name="username", type="string", length=255, nullable=true, unique=true)
      */
     private $username;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, precision=0, scale=0, nullable=false, unique=true)
+     * @ORM\Column(name="email", type="string", length=255, nullable=false, unique=true)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="displayName", type="string", length=50, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="displayName", type="string", length=50, nullable=true, unique=false)
      */
     private $displayName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=128, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="password", type="string", length=128, nullable=false, unique=false)
      */
     private $password;
     
